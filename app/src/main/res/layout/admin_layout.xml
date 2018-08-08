@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:layout_editor_absoluteX="85dp"
+        tools:layout_editor_absoluteY="49dp">
+
+        <Button
+            android:id="@+id/buttonReset"
+            android:layout_width="match_parent"
+            android:layout_height="111dp"
+            android:backgroundTint="@android:color/holo_red_dark"
+            android:textColor="@android:color/white"
+            android:text="Reset"
+            android:textSize="30sp" />
+    </FrameLayout>
+</android.support.constraint.ConstraintLayout>

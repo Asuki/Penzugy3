@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="10dp"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <Spinner
+                android:id="@+id/spinnerShppingUsers"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" />
+
+            <Spinner
+                android:id="@+id/spinnerShoppingCategory"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/textViewItemLabel"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Cikk"
+                android:textSize="18sp" />
+
+            <EditText
+                android:id="@+id/editTextItemName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:ems="10"
+                android:inputType="text" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/textViewValueLabel"
+                android:layout_width="180dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Terv"
+                android:textSize="18sp" />
+
+            <EditText
+                android:id="@+id/editTextItemValue"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:ems="10"
+                android:inputType="number" />
+
+            <TextView
+                android:id="@+id/textViewRealValueLabel"
+                android:layout_width="180dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Tény"
+                android:textSize="18sp" />
+
+            <EditText
+                android:id="@+id/editTextItemRealValue"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:ems="10"
+                android:inputType="number" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            tools:layout_editor_absoluteX="8dp"
+            tools:layout_editor_absoluteY="8dp">
+
+            <TextView
+                android:id="@+id/textViewItemQuantityLabel"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Mennyiség"
+                android:textSize="18sp" />
+
+            <EditText
+                android:id="@+id/editTextItemQuantity"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:ems="10"
+                android:inputType="number" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/buttonAddItem"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:backgroundTint="@android:color/holo_green_light"
+                android:text="Hozzáad"
+                android:textColor="@android:color/white" />
+
+            <Button
+                android:id="@+id/buttonDeleteItem"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:backgroundTint="@android:color/holo_red_light"
+                android:text="Törlés"
+                android:textColor="@android:color/white" />
+
+            <Button
+                android:id="@+id/buttonItemReady"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:backgroundTint="@android:color/holo_blue_light"
+                android:text="Kész"
+                android:textColor="@android:color/white" />
+        </LinearLayout>
+
+        <ListView
+            android:id="@+id/listViewShoppingList"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="25dp" />
+
+    </LinearLayout>
+
+</android.support.constraint.ConstraintLayout>
