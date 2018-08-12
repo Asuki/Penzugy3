@@ -101,6 +101,12 @@ public class MainActivity extends AppCompatActivity
         } else if (id == R.id.nav_shopping_list) {
             getFragmentManager().beginTransaction().replace(R.id.content_frame, new ShoppingListFragment()).commit();
             setTitle("Bevásárló lista");
+        } else if (id == R.id.nav_finance) {
+            getFragmentManager().beginTransaction().replace(R.id.content_frame, new FinanceFragment()).commit();
+            setTitle("Költések");
+        } else if (id == R.id.nav_test) {
+            getFragmentManager().beginTransaction().replace(R.id.content_frame, new TestFragment()).commit();
+            setTitle("Teszt");
         } else if (id == R.id.nav_admin) {
             getFragmentManager().beginTransaction().replace(R.id.content_frame, new AdminFragment()).commit();
             setTitle("Adminisztráció");

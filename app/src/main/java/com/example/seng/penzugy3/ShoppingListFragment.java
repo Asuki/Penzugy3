@@ -17,7 +17,10 @@ import android.widget.ListView;
 import android.widget.Spinner;
 import android.widget.Toast;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
+import java.util.Locale;
 
 public class ShoppingListFragment extends Fragment{
     View shoppingListView;
@@ -149,7 +152,8 @@ public class ShoppingListFragment extends Fragment{
                     int value = Integer.parseInt(editTextItemRealValue.getText().toString());
 
                     databaseHelper.addFinance(userID, categoryID, value);
-                    toastMessage("Költség sikeresen hozzáadva a költések táblához " + editTextItemName.getText().toString());
+                    //toastMessage("Költség sikeresen hozzáadva a költések táblához " + editTextItemName.getText().toString());
+                    toastMessage(new SimpleDateFormat("yyyy-MM-dd", Locale.getDefault()).format(new Date()));
 
                     databaseHelper.removeShoppingListItem(itemName);
                     Log.d(TAG, "Removing shopping list item = " + itemName);

@@ -7,7 +7,10 @@ import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.util.Log;
 
+import java.text.SimpleDateFormat;
 import java.util.Calendar;
+import java.util.Date;
+import java.util.Locale;
 
 
 public class DatabaseHelper extends  SQLiteOpenHelper{
@@ -31,12 +34,12 @@ public class DatabaseHelper extends  SQLiteOpenHelper{
     private static final String STRING_TYPE_200 = " varchar(200)";
     private static final String INT_TYPE = " integer";
     private static final String UNIQUE_MODIFIER = " unique";
-    private static final String TIME_STAMP_TYPE_CURR_DATE = " DATETIME DEFAULT CURRENT_TIMESTAMP";
+    private static final String TIME_STAMP_TYPE_CURR_DATE = " DATETIME";
 
     private static final String DEFAULT_INT = " DEFAULT 0";
 
     // region Tables
-    private static final String FINANCE_TABLE = "finance";
+    public static final String FINANCE_TABLE = "finance";
     private static final String FINANCE_ID = "finance_id";
     private static final String FINANCE_USER_ID = "user_id";
     private static final String FINANCE_CATEGORY_ID = "category_id";
@@ -54,7 +57,7 @@ public class DatabaseHelper extends  SQLiteOpenHelper{
             CREATE_FINANCE_VALUE + ", " +
             CREATE_FINANCE_USAGE_DATE + ");";
 
-    private static final String CATEGORY_TABLE  = "category";
+    public static final String CATEGORY_TABLE  = "category";
     private static final String CATEGORY_ID = "category_id";
     private static final String CATEGORY_NAME =  "category_name";
     private static final String CATEGORY_MONTHLY_LIMIT = "monthly_limit";
@@ -72,7 +75,7 @@ public class DatabaseHelper extends  SQLiteOpenHelper{
             CREATE_CATEGORY_BASE_VALUE + ", " +
             CREATE_CATEGORY_VALUE_TYPE + ");";
 
-    private static final String USER_TABLE = "users";
+    public static final String USER_TABLE = "users";
     private static final String USER_ID = "user_id";
     private static final String USER_USER_NAME = "user_name";
     private static final String CREATE_USER_ID = USER_ID+ ID_TYPE;
@@ -81,7 +84,7 @@ public class DatabaseHelper extends  SQLiteOpenHelper{
             CREATE_USER_ID + ", " +
             CREATE_USER_USER_NAME + ");";
 
-    private static final String SHOPPING_LIST_TABLE = "shopping_list";
+    public static final String SHOPPING_LIST_TABLE = "shopping_list";
     private static final String SHOPPING_ID = "shopping_id";
     private static final String SHOPPING_ITEM_NAME = "item_name";
     private static final String SHOPPING_ITEM_VALUE = "value";
@@ -207,9 +210,14 @@ public class DatabaseHelper extends  SQLiteOpenHelper{
         Long tsLong = System.currentTimeMillis()/1000;
         String ts = tsLong.toString();
 
-        contentValues.put(FINANCE_USAGE_DATE, ts);
+        Date c = Calendar.getInstance().getTime();
 
-        Log.d(TAG, "addFinance: Adding (userID, categoryID, value, time)" + userID + ", " + value + ", " + categoryID + ", " + value + ", " + ts + " to " + FINANCE_TABLE);
+        SimpleDateFormat df = new SimpleDateFormat("yyyy-MMM-dd");
+        String formattedDate = df.format(c);
+
+        contentValues.put(FINANCE_USAGE_DATE, new SimpleDateFormat("yyyy-MM-dd", Locale.getDefault()).format(new Date()));
+
+        Log.d(TAG, "addFinance: Adding (userID, categoryID, value, time)" + userID + ", " + value + ", " + categoryID + ", " + value + ", " + new SimpleDateFormat("yyyy-MM-dd", Locale.getDefault()).format(new Date()) + " to " + FINANCE_TABLE);
         long result = db.insert(FINANCE_TABLE, null, contentValues);
         if (-1 == result){
             return  false;
@@ -241,6 +249,36 @@ public class DatabaseHelper extends  SQLiteOpenHelper{
             return (calendar.get(Calendar.DAY_OF_MONTH) / 16) * (avg - baseValue) + baseValue;
         }
         return 0;
+    }
+
+    public Cursor getFullTable(String tableName){
+        SQLiteDatabase db = getWritableDatabase();
+        String query = "SELECT * FROM " + tableName;
+        Log.d(TAG, "getFullTable: query: " + query);
+        Cursor data = db.rawQuery(query, null);
+        Log.d(TAG, "getFullTable: query run successfully");
+
+        return data;
+    }
+
+    public Cursor getFinance(){
+        SQLiteDatabase db = getWritableDatabase();
+        String query = "SELECT " +
+                        FINANCE_ID + ", " +
+                        USER_USER_NAME + ", " +
+                        CATEGORY_NAME + ", " +
+                        FINANCE_VALUE + ", " +
+                        FINANCE_USAGE_DATE +
+                        " FROM " + FINANCE_TABLE +
+                        " LEFT JOIN " + USER_TABLE +
+                        " on " + FINANCE_TABLE + "." + FINANCE_USER_ID + " = "  + USER_TABLE + "." + USER_ID +
+                        " LEFT JOIN " + CATEGORY_TABLE +
+                        " on " + FINANCE_TABLE + "." + FINANCE_CATEGORY_ID + " = "  + CATEGORY_TABLE + "." + CATEGORY_ID;
+        Log.d(TAG, "getFullTable: query: " + query);
+        Cursor data = db.rawQuery(query, null);
+        Log.d(TAG, "getFullTable: query run successfully");
+
+        return data;
     }
 
     public Cursor getUsers(){
@@ -304,6 +342,7 @@ public class DatabaseHelper extends  SQLiteOpenHelper{
         db.execSQL(DROP_TABLE + USER_TABLE);
         db.execSQL(DROP_TABLE + CATEGORY_TABLE);
         db.execSQL(DROP_TABLE + SHOPPING_LIST_TABLE);
+        db.execSQL(DROP_TABLE + FINANCE_TABLE);
         onCreate(db);
     }
 }

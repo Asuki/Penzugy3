@@ -20,6 +20,14 @@
             android:id="@+id/nav_shopping_list"
             android:icon="@drawable/ic_menu_gallery"
             android:title="Bevásárló lista" />
+        <item
+            android:id="@+id/nav_finance"
+            android:icon="@drawable/ic_menu_gallery"
+            android:title="Költések" />
+        <item
+            android:id="@+id/nav_test"
+            android:icon="@drawable/ic_menu_gallery"
+            android:title="Teszt" />
     </group>
 
     <item android:title="Communicate">

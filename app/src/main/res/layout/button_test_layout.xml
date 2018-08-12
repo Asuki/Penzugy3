@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <HorizontalScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="80dp"
+            android:orientation="horizontal"
+            tools:layout_editor_absoluteX="0dp"
+            tools:layout_editor_absoluteY="31dp">
+
+            <Button
+                android:id="@+id/button"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_weight="1"
+                android:backgroundTint="@android:color/transparent"
+                android:drawableBottom="@drawable/ic_house" />
+
+            <Button
+                android:id="@+id/button8"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_weight="1"
+                android:backgroundTint="@android:color/transparent"
+                android:drawableBottom="@drawable/ic_shoppig_bag" />
+
+            <Button
+                android:id="@+id/button7"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_weight="1"
+                android:backgroundTint="@android:color/transparent"
+                android:drawableBottom="@drawable/ic_phone_office" />
+
+            <Button
+                android:id="@+id/button6"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_weight="1"
+                android:backgroundTint="@android:color/transparent"
+                android:drawableBottom="@drawable/ic_cash_register" />
+
+            <Button
+                android:id="@+id/button5"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_weight="1" />
+
+            <Button
+                android:id="@+id/button4"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_weight="1" />
+
+            <Button
+                android:id="@+id/button3"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_weight="1" />
+
+        </LinearLayout>
+    </HorizontalScrollView>
+
+</android.support.constraint.ConstraintLayout>
