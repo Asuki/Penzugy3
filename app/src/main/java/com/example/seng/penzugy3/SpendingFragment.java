@@ -12,6 +12,7 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.Spinner;
@@ -27,7 +28,10 @@ public class SpendingFragment extends Fragment{
     Spinner spinnerCategories, spinnerUsers;
     Button btnV1, btnV2, btnV3, btnV4, btnV5, btnV6, btnV7, btnV8, btnV9, btnV0, btnV00, btnV000;
     Button btnBckSpc, btnEnter;
+    ImageButton imageButtonDaily, imageButtonHouse,imageButtonEntertainment, imageButtonCelebrations;
+    ImageButton imageButtonTravel, imageButtonCredit, imageButtonIncome;
     EditText editTextSpending;
+    int selectedId;
 
     private static final String TAG = "SpendingFragment";
     DatabaseHelper databaseHelper;
@@ -35,12 +39,22 @@ public class SpendingFragment extends Fragment{
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
+        selectedId = 2;
+
         spendingView = inflater.inflate(R.layout.spending_layout, container, false);
 
         databaseHelper = new DatabaseHelper(getActivity());
-        spinnerCategories = spendingView.findViewById(R.id.spinnerSpendingCategories);
+        //spinnerCategories = spendingView.findViewById(R.id.spinnerSpendingCategories);
         spinnerUsers = spendingView.findViewById(R.id.spinnerSpendingUsers);
         editTextSpending = spendingView.findViewById(R.id.editTextSpendingAmount);
+
+        imageButtonDaily = spendingView.findViewById(R.id.imageButtonDaily);
+        imageButtonHouse = spendingView.findViewById(R.id.imageButtonHouse);
+        imageButtonCelebrations = spendingView.findViewById(R.id.imageButtonCelebrations);
+        imageButtonEntertainment = spendingView.findViewById(R.id.imageButtonEntertainment);
+        imageButtonTravel = spendingView.findViewById(R.id.imageButtonTravel);
+        imageButtonCredit = spendingView.findViewById(R.id.imageButtonCredit);
+        imageButtonIncome = spendingView.findViewById(R.id.imageButtonIncome);
 
         btnV1 = spendingView.findViewById(R.id.buttonV1);
         btnV2 = spendingView.findViewById(R.id.buttonV2);
@@ -56,6 +70,69 @@ public class SpendingFragment extends Fragment{
         btnV0 = spendingView.findViewById(R.id.buttonV0);
         btnBckSpc = spendingView.findViewById(R.id.buttonBckSpc);
         btnEnter = spendingView.findViewById(R.id.buttonEnter);
+
+        imageButtonIncome.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v) {
+                setDefaultButtonImages();
+                imageButtonIncome.setImageResource(R.drawable.ic_huf_inv60);
+                selectedId = 1;
+            }
+        });
+
+        imageButtonDaily.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v) {
+                setDefaultButtonImages();
+                imageButtonDaily.setImageResource(R.drawable.ic_shopping_cart_inv60);
+                selectedId = 2;
+            }
+        });
+
+        imageButtonEntertainment.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v) {
+                setDefaultButtonImages();
+                imageButtonEntertainment.setImageResource(R.drawable.ic_entertainment_inv60);
+                selectedId = 3;
+            }
+        });
+
+        imageButtonCelebrations.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v) {
+                setDefaultButtonImages();
+                imageButtonCelebrations.setImageResource(R.drawable.ic_celebrations_inv60);
+                selectedId = 4;
+            }
+        });
+
+        imageButtonTravel.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v) {
+                setDefaultButtonImages();
+                imageButtonTravel.setImageResource(R.drawable.ic_travel_inv60);
+                selectedId = 5;
+            }
+        });
+
+        imageButtonHouse.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v) {
+                setDefaultButtonImages();
+                imageButtonHouse.setImageResource(R.drawable.ic_house_inv60);
+                selectedId = 6;
+            }
+        });
+
+        imageButtonCredit.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v) {
+                setDefaultButtonImages();
+                imageButtonCredit.setImageResource(R.drawable.ic_credit_inv60);
+                selectedId = 6;
+            }
+        });
 
         btnV1.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -143,17 +220,18 @@ public class SpendingFragment extends Fragment{
                     Log.d(TAG, "-- Calculating shopping list --");
 
                     int userID = -1;
-                    int categoryID = -1;
+                    int categoryID = selectedId;
+                    Log.d(TAG, "selectedID = " + selectedId);
                     Cursor data = databaseHelper.getUsers(spinnerUsers.getSelectedItem().toString());
                     while (data.moveToNext()){
                         userID = data.getInt(databaseHelper.ID_POSITION);
                     }
                     Log.d(TAG, "user id while adding finance: " + userID);
 
-                    data = databaseHelper.getCategoryID(spinnerCategories.getSelectedItem().toString());
-                    while (data.moveToNext()){
+                    //data = databaseHelper.getCategoryID(spinnerCategories.getSelectedItem().toString());
+                    /*while (data.moveToNext()){
                         categoryID = data.getInt(databaseHelper.ID_POSITION);
-                    }
+                    }*/
                     Log.d(TAG, "category id while adding finance: " + categoryID);
 
                     int value = Integer.parseInt(editTextSpending.getText().toString());
@@ -172,8 +250,21 @@ public class SpendingFragment extends Fragment{
         return spendingView;
     }
 
+    private void setDefaultButtonImages(){
+        imageButtonDaily.setImageResource(R.drawable.ic_shopping_cart60);
+        imageButtonHouse.setImageResource(R.drawable.ic_house60);
+        imageButtonEntertainment.setImageResource(R.drawable.ic_entertainment60);
+        imageButtonCelebrations.setImageResource(R.drawable.ic_celebrations60);
+        imageButtonTravel.setImageResource(R.drawable.ic_travel60);
+        imageButtonCredit.setImageResource(R.drawable.ic_credit60);
+        imageButtonIncome.setImageResource(R.drawable.ic_huf60);
+    }
+
+
     private void fillSpinner(){
         Cursor data = databaseHelper.getCategories();
+
+        /*
         ArrayList<String> arrayListCategories = new ArrayList<>();
 
         while (data.moveToNext()){
@@ -181,7 +272,7 @@ public class SpendingFragment extends Fragment{
         }
 
         ArrayAdapter adapter = new ArrayAdapter<>(getActivity(), android.R.layout.simple_list_item_1, arrayListCategories);
-        spinnerCategories.setAdapter(adapter);
+        spinnerCategories.setAdapter(adapter);*/
 
 
         data = databaseHelper.getUsers();

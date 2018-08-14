@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <android.support.constraint.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
@@ -11,6 +12,75 @@
         android:layout_margin="25dp"
         android:orientation="vertical">
 
+        <HorizontalScrollView
+            android:layout_width="match_parent"
+            android:layout_height="80dp">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <ImageButton
+                    android:id="@+id/imageButtonIncome"
+                    android:layout_width="70dp"
+                    android:layout_height="70dp"
+                    android:layout_weight="1"
+                    android:backgroundTint="@android:color/transparent"
+                    app:srcCompat="@drawable/ic_huf60"
+                    tools:layout_editor_absoluteX="335dp"
+                    tools:layout_editor_absoluteY="16dp" />
+
+                <ImageButton
+                    android:id="@+id/imageButtonDaily"
+                    android:layout_width="70dp"
+                    android:layout_height="70dp"
+                    android:layout_weight="1"
+                    android:backgroundTint="@android:color/transparent"
+                    app:srcCompat="@drawable/ic_shopping_cart_inv60" />
+
+                <ImageButton
+                    android:id="@+id/imageButtonEntertainment"
+                    android:layout_width="70dp"
+                    android:layout_height="70dp"
+                    android:layout_weight="1"
+                    android:backgroundTint="@android:color/transparent"
+                    app:srcCompat="@drawable/ic_entertainment60" />
+
+                <ImageButton
+                    android:id="@+id/imageButtonCelebrations"
+                    android:layout_width="70dp"
+                    android:layout_height="70dp"
+                    android:layout_weight="1"
+                    android:backgroundTint="@android:color/transparent"
+                    app:srcCompat="@drawable/ic_celebrations60" />
+
+                <ImageButton
+                    android:id="@+id/imageButtonTravel"
+                    android:layout_width="70dp"
+                    android:layout_height="70dp"
+                    android:layout_weight="1"
+                    android:backgroundTint="@android:color/transparent"
+                    app:srcCompat="@drawable/ic_travel60" />
+
+                <ImageButton
+                    android:id="@+id/imageButtonHouse"
+                    android:layout_width="70dp"
+                    android:layout_height="70dp"
+                    android:layout_weight="1"
+                    android:backgroundTint="@android:color/transparent"
+                    app:srcCompat="@drawable/ic_house60" />
+
+                <ImageButton
+                    android:id="@+id/imageButtonCredit"
+                    android:layout_width="70dp"
+                    android:layout_height="70dp"
+                    android:layout_weight="1"
+                    android:backgroundTint="@android:color/transparent"
+                    app:srcCompat="@drawable/ic_credit60" />
+            </LinearLayout>
+        </HorizontalScrollView>
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -18,18 +88,6 @@
 
             <Spinner
                 android:id="@+id/spinnerSpendingUsers"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="1" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
-
-            <Spinner
-                android:id="@+id/spinnerSpendingCategories"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1" />
