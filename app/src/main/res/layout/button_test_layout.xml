@@ -10,6 +10,7 @@
         android:layout_height="match_parent">
 
         <LinearLayout
+            android:id="@+id/linLayButton"
             android:layout_width="wrap_content"
             android:layout_height="80dp"
             android:orientation="horizontal"
@@ -23,6 +24,16 @@
                 android:layout_weight="1"
                 android:backgroundTint="@android:color/transparent"
                 android:drawableBottom="@drawable/ic_house" />
+
+            <ImageButton
+                android:id="@+id/imageButton"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:layout_weight="1"
+                android:backgroundTint="@android:color/transparent"
+                app:srcCompat="@drawable/ic_huf60"
+                tools:layout_editor_absoluteX="335dp"
+                tools:layout_editor_absoluteY="16dp" />
 
             <Button
                 android:id="@+id/button8"
@@ -47,24 +58,6 @@
                 android:layout_weight="1"
                 android:backgroundTint="@android:color/transparent"
                 android:drawableBottom="@drawable/ic_cash_register" />
-
-            <Button
-                android:id="@+id/button5"
-                android:layout_width="60dp"
-                android:layout_height="60dp"
-                android:layout_weight="1" />
-
-            <Button
-                android:id="@+id/button4"
-                android:layout_width="60dp"
-                android:layout_height="60dp"
-                android:layout_weight="1" />
-
-            <Button
-                android:id="@+id/button3"
-                android:layout_width="60dp"
-                android:layout_height="60dp"
-                android:layout_weight="1" />
 
         </LinearLayout>
     </HorizontalScrollView>

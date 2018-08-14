@@ -17,7 +17,10 @@ import android.widget.ListView;
 import android.widget.Spinner;
 import android.widget.Toast;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
+import java.util.Locale;
 
 public class SpendingFragment extends Fragment{
     View spendingView;
@@ -132,6 +135,33 @@ public class SpendingFragment extends Fragment{
                 if (editTextSpending.getText().length() > 0)
                     editTextSpending.setText(editTextSpending.getText().subSequence(0, editTextSpending.getText().length() - 1));
             }
+        });
+
+        btnEnter.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v) {
+                    Log.d(TAG, "-- Calculating shopping list --");
+
+                    int userID = -1;
+                    int categoryID = -1;
+                    Cursor data = databaseHelper.getUsers(spinnerUsers.getSelectedItem().toString());
+                    while (data.moveToNext()){
+                        userID = data.getInt(databaseHelper.ID_POSITION);
+                    }
+                    Log.d(TAG, "user id while adding finance: " + userID);
+
+                    data = databaseHelper.getCategoryID(spinnerCategories.getSelectedItem().toString());
+                    while (data.moveToNext()){
+                        categoryID = data.getInt(databaseHelper.ID_POSITION);
+                    }
+                    Log.d(TAG, "category id while adding finance: " + categoryID);
+
+                    int value = Integer.parseInt(editTextSpending.getText().toString());
+
+                    databaseHelper.addFinance(userID, categoryID, value);
+                    toastMessage("Költség sikeresen hozzáadva a költések táblához " + editTextSpending.getText().toString());
+                    editTextSpending.setText("");
+                }
         });
 
         //try {

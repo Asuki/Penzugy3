@@ -152,8 +152,8 @@ public class ShoppingListFragment extends Fragment{
                     int value = Integer.parseInt(editTextItemRealValue.getText().toString());
 
                     databaseHelper.addFinance(userID, categoryID, value);
-                    //toastMessage("Költség sikeresen hozzáadva a költések táblához " + editTextItemName.getText().toString());
-                    toastMessage(new SimpleDateFormat("yyyy-MM-dd", Locale.getDefault()).format(new Date()));
+                    toastMessage("Költség sikeresen hozzáadva a költések táblához " + editTextItemName.getText().toString());
+                    //toastMessage(new SimpleDateFormat("yyyy-MM-dd", Locale.getDefault()).format(new Date()));
 
                     databaseHelper.removeShoppingListItem(itemName);
                     Log.d(TAG, "Removing shopping list item = " + itemName);

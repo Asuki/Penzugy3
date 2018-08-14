@@ -1,0 +1,34 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="50dp"
+    android:height="50dp"
+    android:viewportWidth="50"
+    android:viewportHeight="50">
+    <path
+        android:name="alap"
+        android:pathData="m45 15v20h-40v-20zm-42 -2v24h44v-24z"
+        android:fillColor="#00501f" />
+    <path
+        android:fillColor="#fff"
+        android:name="Téglalap 1"
+        android:pathData="m4 14h42v22h-42v-22z" />
+    <path
+        android:fillColor="#00501f"
+        android:name="Ellipszis 1"
+        android:pathData="m6.5 13c1.93 0 3.5 1.57 3.5 3.5c0 1.93 -1.57 3.5 -3.5 3.5c-1.93 0 -3.5 -1.57 -3.5 -3.5c0 -1.93 1.57 -3.5 3.5 -3.5z" />
+    <path
+        android:fillColor="#00501f"
+        android:name="Ellipszis 1 másolat"
+        android:pathData="m43.5 13c1.93 0 3.5 1.57 3.5 3.5c0 1.93 -1.57 3.5 -3.5 3.5c-1.93 0 -3.5 -1.57 -3.5 -3.5c0 -1.93 1.57 -3.5 3.5 -3.5z" />
+    <path
+        android:fillColor="#00501f"
+        android:name="Ellipszis 1 másolat 2"
+        android:pathData="m6.5 30c1.93 0 3.5 1.57 3.5 3.5c0 1.93 -1.57 3.5 -3.5 3.5c-1.93 0 -3.5 -1.57 -3.5 -3.5c0 -1.93 1.57 -3.5 3.5 -3.5z" />
+    <path
+        android:fillColor="#00501f"
+        android:name="Ellipszis 1 másolat 3"
+        android:pathData="m43.5 30c1.93 0 3.5 1.57 3.5 3.5c0 1.93 -1.57 3.5 -3.5 3.5c-1.93 0 -3.5 -1.57 -3.5 -3.5c0 -1.93 1.57 -3.5 3.5 -3.5z" />
+    <path
+        android:fillColor="#00501f"
+        android:name="Ellipszis 2"
+        android:pathData="m25 17c4.42 0 8 3.58 8 8c0 4.42 -3.58 8 -8 8c-4.42 0 -8 -3.58 -8 -8c0 -4.42 3.58 -8 8 -8z" />
+</vector>
