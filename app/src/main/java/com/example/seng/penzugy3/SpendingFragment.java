@@ -77,6 +77,7 @@ public class SpendingFragment extends Fragment{
                 setDefaultButtonImages();
                 imageButtonIncome.setImageResource(R.drawable.ic_huf_inv60);
                 selectedId = 1;
+                showCategoryName(selectedId);
             }
         });
 
@@ -86,6 +87,7 @@ public class SpendingFragment extends Fragment{
                 setDefaultButtonImages();
                 imageButtonDaily.setImageResource(R.drawable.ic_shopping_cart_inv60);
                 selectedId = 2;
+                showCategoryName(selectedId);
             }
         });
 
@@ -95,6 +97,7 @@ public class SpendingFragment extends Fragment{
                 setDefaultButtonImages();
                 imageButtonEntertainment.setImageResource(R.drawable.ic_entertainment_inv60);
                 selectedId = 3;
+                showCategoryName(selectedId);
             }
         });
 
@@ -104,6 +107,7 @@ public class SpendingFragment extends Fragment{
                 setDefaultButtonImages();
                 imageButtonCelebrations.setImageResource(R.drawable.ic_celebrations_inv60);
                 selectedId = 4;
+                showCategoryName(selectedId);
             }
         });
 
@@ -113,6 +117,7 @@ public class SpendingFragment extends Fragment{
                 setDefaultButtonImages();
                 imageButtonTravel.setImageResource(R.drawable.ic_travel_inv60);
                 selectedId = 5;
+                showCategoryName(selectedId);
             }
         });
 
@@ -122,6 +127,7 @@ public class SpendingFragment extends Fragment{
                 setDefaultButtonImages();
                 imageButtonHouse.setImageResource(R.drawable.ic_house_inv60);
                 selectedId = 6;
+                showCategoryName(selectedId);
             }
         });
 
@@ -131,6 +137,7 @@ public class SpendingFragment extends Fragment{
                 setDefaultButtonImages();
                 imageButtonCredit.setImageResource(R.drawable.ic_credit_inv60);
                 selectedId = 6;
+                showCategoryName(selectedId);
             }
         });
 
@@ -260,6 +267,19 @@ public class SpendingFragment extends Fragment{
         imageButtonIncome.setImageResource(R.drawable.ic_huf60);
     }
 
+    private void showCategoryName(int selectedId){
+        String catName = "";
+        Cursor data = databaseHelper.getCategoryName(selectedId);
+        try{
+            while(data.moveToNext()){
+                catName = data.getString(databaseHelper.NAME_POSITION);
+            }
+            toastMessage(catName);
+        }
+        catch (Exception e){
+
+        }
+    }
 
     private void fillSpinner(){
         Cursor data = databaseHelper.getCategories();

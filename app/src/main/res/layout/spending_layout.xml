@@ -6,213 +6,221 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <LinearLayout
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_margin="25dp"
-        android:orientation="vertical">
 
-        <HorizontalScrollView
-            android:layout_width="match_parent"
-            android:layout_height="80dp">
-
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:orientation="horizontal">
-
-                <ImageButton
-                    android:id="@+id/imageButtonIncome"
-                    android:layout_width="70dp"
-                    android:layout_height="70dp"
-                    android:layout_weight="1"
-                    android:backgroundTint="@android:color/transparent"
-                    app:srcCompat="@drawable/ic_huf60"
-                    tools:layout_editor_absoluteX="335dp"
-                    tools:layout_editor_absoluteY="16dp" />
-
-                <ImageButton
-                    android:id="@+id/imageButtonDaily"
-                    android:layout_width="70dp"
-                    android:layout_height="70dp"
-                    android:layout_weight="1"
-                    android:backgroundTint="@android:color/transparent"
-                    app:srcCompat="@drawable/ic_shopping_cart_inv60" />
-
-                <ImageButton
-                    android:id="@+id/imageButtonEntertainment"
-                    android:layout_width="70dp"
-                    android:layout_height="70dp"
-                    android:layout_weight="1"
-                    android:backgroundTint="@android:color/transparent"
-                    app:srcCompat="@drawable/ic_entertainment60" />
-
-                <ImageButton
-                    android:id="@+id/imageButtonCelebrations"
-                    android:layout_width="70dp"
-                    android:layout_height="70dp"
-                    android:layout_weight="1"
-                    android:backgroundTint="@android:color/transparent"
-                    app:srcCompat="@drawable/ic_celebrations60" />
-
-                <ImageButton
-                    android:id="@+id/imageButtonTravel"
-                    android:layout_width="70dp"
-                    android:layout_height="70dp"
-                    android:layout_weight="1"
-                    android:backgroundTint="@android:color/transparent"
-                    app:srcCompat="@drawable/ic_travel60" />
-
-                <ImageButton
-                    android:id="@+id/imageButtonHouse"
-                    android:layout_width="70dp"
-                    android:layout_height="70dp"
-                    android:layout_weight="1"
-                    android:backgroundTint="@android:color/transparent"
-                    app:srcCompat="@drawable/ic_house60" />
-
-                <ImageButton
-                    android:id="@+id/imageButtonCredit"
-                    android:layout_width="70dp"
-                    android:layout_height="70dp"
-                    android:layout_weight="1"
-                    android:backgroundTint="@android:color/transparent"
-                    app:srcCompat="@drawable/ic_credit60" />
-            </LinearLayout>
-        </HorizontalScrollView>
+        android:layout_height="wrap_content">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            android:layout_margin="25dp"
+            android:paddingBottom="50dp"
+            android:orientation="vertical">
 
-            <Spinner
-                android:id="@+id/spinnerSpendingUsers"
+            <HorizontalScrollView
+                android:layout_width="match_parent"
+                android:layout_height="80dp">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <ImageButton
+                        android:id="@+id/imageButtonIncome"
+                        android:layout_width="70dp"
+                        android:layout_height="70dp"
+                        android:layout_weight="1"
+                        android:backgroundTint="@android:color/transparent"
+                        app:srcCompat="@drawable/ic_huf60"
+                        tools:layout_editor_absoluteX="335dp"
+                        tools:layout_editor_absoluteY="16dp" />
+
+                    <ImageButton
+                        android:id="@+id/imageButtonDaily"
+                        android:layout_width="70dp"
+                        android:layout_height="70dp"
+                        android:layout_weight="1"
+                        android:backgroundTint="@android:color/transparent"
+                        app:srcCompat="@drawable/ic_shopping_cart_inv60" />
+
+                    <ImageButton
+                        android:id="@+id/imageButtonEntertainment"
+                        android:layout_width="70dp"
+                        android:layout_height="70dp"
+                        android:layout_weight="1"
+                        android:backgroundTint="@android:color/transparent"
+                        app:srcCompat="@drawable/ic_entertainment60" />
+
+                    <ImageButton
+                        android:id="@+id/imageButtonCelebrations"
+                        android:layout_width="70dp"
+                        android:layout_height="70dp"
+                        android:layout_weight="1"
+                        android:backgroundTint="@android:color/transparent"
+                        app:srcCompat="@drawable/ic_celebrations60" />
+
+                    <ImageButton
+                        android:id="@+id/imageButtonTravel"
+                        android:layout_width="70dp"
+                        android:layout_height="70dp"
+                        android:layout_weight="1"
+                        android:backgroundTint="@android:color/transparent"
+                        app:srcCompat="@drawable/ic_travel60" />
+
+                    <ImageButton
+                        android:id="@+id/imageButtonHouse"
+                        android:layout_width="70dp"
+                        android:layout_height="70dp"
+                        android:layout_weight="1"
+                        android:backgroundTint="@android:color/transparent"
+                        app:srcCompat="@drawable/ic_house60" />
+
+                    <ImageButton
+                        android:id="@+id/imageButtonCredit"
+                        android:layout_width="70dp"
+                        android:layout_height="70dp"
+                        android:layout_weight="1"
+                        android:backgroundTint="@android:color/transparent"
+                        app:srcCompat="@drawable/ic_credit60" />
+                </LinearLayout>
+            </HorizontalScrollView>
+
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="1" />
-        </LinearLayout>
+                android:orientation="horizontal">
 
-        <EditText
-            android:id="@+id/editTextSpendingAmount"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:ems="10"
-            android:inputType="number" />
+                <Spinner
+                    android:id="@+id/spinnerSpendingUsers"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1" />
+            </LinearLayout>
 
-        <TableLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
-
-            <TableRow
+            <EditText
+                android:id="@+id/editTextSpendingAmount"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent" >
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:inputType="number" />
 
-                <Button
-                    android:id="@+id/buttonV1"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="1" />
-
-                <Button
-                    android:id="@+id/buttonV2"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="2" />
-
-                <Button
-                    android:id="@+id/buttonV3"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="3" />
-            </TableRow>
-
-            <TableRow
-                android:layout_width="match_parent"
-                android:layout_height="match_parent" >
-
-                <Button
-                    android:id="@+id/buttonV4"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="4" />
-
-                <Button
-                    android:id="@+id/buttonV5"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="5" />
-
-                <Button
-                    android:id="@+id/buttonV6"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="6" />
-            </TableRow>
-
-            <TableRow
-                android:layout_width="match_parent"
-                android:layout_height="match_parent" >
-
-                <Button
-                    android:id="@+id/buttonV7"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="7" />
-
-                <Button
-                    android:id="@+id/buttonV8"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="8" />
-
-                <Button
-                    android:id="@+id/buttonV9"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="9" />
-            </TableRow>
-
-            <TableRow
-                android:layout_width="match_parent"
-                android:layout_height="match_parent" >
-
-                <Button
-                    android:id="@+id/buttonV0"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="0" />
-
-                <Button
-                    android:id="@+id/buttonV00"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="00" />
-
-                <Button
-                    android:id="@+id/buttonV000"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="000" />
-            </TableRow>
-
-            <TableRow
+            <TableLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
 
-                <Button
-                    android:id="@+id/buttonBckSpc"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="VISSZA" />
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
 
-                <Button
-                    android:id="@+id/buttonEnter"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="ENTER" />
-            </TableRow>
-        </TableLayout>
+                    <Button
+                        android:id="@+id/buttonV1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="1" />
 
-    </LinearLayout>
+                    <Button
+                        android:id="@+id/buttonV2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="2" />
+
+                    <Button
+                        android:id="@+id/buttonV3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="3" />
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <Button
+                        android:id="@+id/buttonV4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="4" />
+
+                    <Button
+                        android:id="@+id/buttonV5"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="5" />
+
+                    <Button
+                        android:id="@+id/buttonV6"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="6" />
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <Button
+                        android:id="@+id/buttonV7"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="7" />
+
+                    <Button
+                        android:id="@+id/buttonV8"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="8" />
+
+                    <Button
+                        android:id="@+id/buttonV9"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="9" />
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <Button
+                        android:id="@+id/buttonV0"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="0" />
+
+                    <Button
+                        android:id="@+id/buttonV00"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="00" />
+
+                    <Button
+                        android:id="@+id/buttonV000"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="000" />
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <Button
+                        android:id="@+id/buttonBckSpc"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="VISSZA" />
+
+                    <Button
+                        android:id="@+id/buttonEnter"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="ENTER" />
+                </TableRow>
+            </TableLayout>
+
+        </LinearLayout>
+    </ScrollView>
+
 </android.support.constraint.ConstraintLayout>

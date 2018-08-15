@@ -319,6 +319,15 @@ public class DatabaseHelper extends  SQLiteOpenHelper{
         return  data;
     }
 
+    public Cursor getCategoryName(int catID){
+        SQLiteDatabase db = getWritableDatabase();
+        String query = "SELECT * FROM " + CATEGORY_TABLE + " WHERE " + CATEGORY_ID + " = '" + catID + "';";
+        Log.d(TAG, "getCategoryID: query: " + query);
+        Cursor data = db.rawQuery(query, null);
+        Log.d(TAG, "getCategoryID: query run successfully");
+        return  data;
+    }
+
     public Cursor getShoppingList(){
         SQLiteDatabase db = getWritableDatabase();
         String query = "SELECT * FROM " + SHOPPING_LIST_TABLE;
